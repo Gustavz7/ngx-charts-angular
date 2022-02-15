@@ -1,0 +1,15 @@
+.chart-container{
+    padding: 0 5%;
+    height: 400px;
+    box-sizing: border-box;
+    margin: auto;
+
+}
+
+@media (max-width: 720px) {
+    .chart-container{
+    }
+}
+p{
+    color: white;
+}
