@@ -1,4 +1,4 @@
-<h3> Valor del {{selectedValue}} en el ultimo Mes</h3>
+<p style="color: black;"> Valor del {{selectedValue}} en los ultimos {{dates.length}} registros</p>
 <div class="chart-container">
   <canvas
     baseChart
@@ -10,5 +10,8 @@
 </div>
 <p>
   {{errorMessage}}
-
 </p>
+<button (click)="forceChartUpdate()">forceChartUpdate</button>
+{{dates | json}}
+<br>
+{{values | json}}

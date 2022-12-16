@@ -1,0 +1,22 @@
+<div class="main-container">
+    <div class="currency-container">
+        <label id="Options-title">Select the currency</label>
+        <mat-radio-group aria-labelledby="Options-items" class="Options-items"
+            [(ngModel)]="selectedOption" (change)="setCurrency()">
+            <mat-radio-button class="option-item" *ngFor="let option of AvalibleOptions" [value]="option">
+                {{option}}
+            </mat-radio-button>
+        </mat-radio-group>
+        <div>Moneda seleccionada: {{selectedOption}}</div>
+    </div>
+    <div class="datePiker-container">
+        <mat-form-field appearance="fill">
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+    </div>
+    fecha: {{selectedDate}}
+</div>
