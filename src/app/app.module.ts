@@ -13,25 +13,20 @@ import { FormsModule } from '@angular/forms';
 
 //Modulo Angular Material - Todos los componentes
 import { NgMaterialModule } from './ng-material/ng-material.module';
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
     BaseChartComponent,
-    OptionsComponent,
-    
+    OptionsComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     NgChartsModule,
-    BrowserAnimationsModule,
     FormsModule,
     NgMaterialModule
-    
   ],
   providers: [],
   bootstrap: [AppComponent]
