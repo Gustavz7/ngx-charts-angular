@@ -9,7 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgChartsModule } from 'ng2-charts';
 import { OptionsComponent } from './components/options/options.component';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 //Modulo Angular Material - Todos los componentes
 import { NgMaterialModule } from './ng-material/ng-material.module';
@@ -25,8 +25,10 @@ import { NgMaterialModule } from './ng-material/ng-material.module';
     AppRoutingModule,
     HttpClientModule,
     NgChartsModule,
+    NgMaterialModule,
     FormsModule,
-    NgMaterialModule
+    ReactiveFormsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
