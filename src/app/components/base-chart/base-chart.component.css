@@ -5,6 +5,10 @@
     margin: auto 1%;
 
 }
+.chart-title{
+    color: black;
+    font-size: 140%;
+}
 
 @media (max-width: 720px) {
     .chart-container{

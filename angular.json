@@ -104,5 +104,8 @@
       }
     }
   },
-  "defaultProject": "ng2-dinamic-data"
+  "defaultProject": "ng2-dinamic-data",
+  "cli": {
+    "analytics": false
+  }
 }

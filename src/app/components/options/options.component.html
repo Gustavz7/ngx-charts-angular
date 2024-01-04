@@ -1,22 +1,38 @@
 <div class="main-container">
-    <div class="currency-container">
-        <label id="Options-title">Select the currency</label>
-        <mat-radio-group aria-labelledby="Options-items" class="Options-items"
-            [(ngModel)]="selectedOption" (change)="setCurrency()">
-            <mat-radio-button class="option-item" *ngFor="let option of AvalibleOptions" [value]="option.clave">
-                {{option.nombre}}
-            </mat-radio-button>
-        </mat-radio-group>
-        <div>Moneda seleccionada: {{selectedOption}}</div>
-    </div>
-    <div class="datePiker-container">
-        <form>
-            <mat-form-field>
-              <input matInput [matDatepicker]="fechaSeleccionada" placeholder="hola" [formControl]="dateForm">
-              <mat-datepicker-toggle matSuffix [for]="fechaSeleccionada"></mat-datepicker-toggle>
-              <mat-datepicker #fechaSeleccionada></mat-datepicker>
-            </mat-form-field>
-        </form>
-    </div>
- opciones: {{AvalibleOptions}}
+  <div class="currency-container">
+    <label id="Options-title">Select the currency</label>
+    <mat-radio-group
+      aria-labelledby="Options-items"
+      class="Options-items"
+      [(ngModel)]="selectedOption"
+      (change)="setCurrency()"
+    >
+      <mat-radio-button
+        class="option-item"
+        *ngFor="let option of AvalibleOptions"
+        [value]="option.clave"
+      >
+        {{ option.nombre }}
+      </mat-radio-button>
+    </mat-radio-group>
+    <div>Moneda seleccionada: {{ selectedOption }}</div>
+  </div>
+  <div class="datePiker-container">
+    <form>
+      <mat-form-field>
+        <input
+          matInput
+          [matDatepicker]="fechaSeleccionada"
+          placeholder="fecha a revisar"
+          [formControl]="dateForm"
+          (dateChange)="buscarValorPorFecha('change', $event)"
+        />
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="fechaSeleccionada"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #fechaSeleccionada></mat-datepicker>
+      </mat-form-field>
+    </form>
+  </div>
 </div>

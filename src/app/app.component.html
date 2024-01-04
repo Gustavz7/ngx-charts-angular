@@ -1,10 +1,19 @@
-
-<div class="content">
-
-  <app-options class="options-section"></app-options>
-  <app-base-chart class="chart-section"></app-base-chart>
-  <router-outlet class="main-component"></router-outlet>
-  
-  <div class="footer"> Api de <a href="https://www.mindicador.cl" target="_blank">mindicador.cl</a> </div>
-</div>
-
+<app-navbar class="navbar"></app-navbar>
+<main class="content">
+  <article class="main-article">
+    <app-options class="options-section"></app-options>
+    <div class="report-section">
+      <app-base-chart class="chart-component"></app-base-chart>
+      <app-current-value></app-current-value>
+    </div>
+    <router-outlet class="main-component"></router-outlet>
+  </article>
+</main>
+<footer class="footer">
+  <div class="footer-content">
+    <p>
+      Api de
+      <a href="https://www.mindicador.cl" target="_blank">mindicador.cl</a>
+    </p>
+  </div>
+</footer>

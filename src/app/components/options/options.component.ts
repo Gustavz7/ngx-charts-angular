@@ -10,6 +10,7 @@ import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/
 // syntax. However, rollup creates a synthetic default module and we thus need to import it using
 // the `default as` syntax.
 import * as _moment from 'moment';
+import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 // tslint:disable-next-line:no-duplicate-imports
 
 const moment = _moment;
@@ -49,10 +50,13 @@ export class OptionsComponent implements OnInit {
   AvalibleOptions: any[] = [];
   selectedOption: string = '';
   defaultValue: string = 'bitcoin';
-
+//este es el formulario ligado al datepicker a travez de formControl
   dateForm:FormControl = new FormControl(moment());
-  selectedDate: string;
+  
+  selectedDate: any;
+  events: string[] = [];
   constructor(private apiGetData: ApiGetDataService) {
+    //desde el inicio dejamos suscrito para que se actualice el valor selectedDate
     this.dateForm.valueChanges.subscribe((value) => {
       this.selectedDate = value.format("DD-MM-YYYY").toString()
       this.refrescarFecha(this.selectedDate);
@@ -62,9 +66,18 @@ export class OptionsComponent implements OnInit {
 
   }
 
+  buscarValorPorFecha(type: string, event: MatDatepickerInputEvent<Date>) {
+    this.events.push(`${type}: ${event.value}`);
+  }
+
   ngOnInit(): void {
     this.getAvalibleOptions();
     this.setCurrency();
+    console.log(this.selectedDate)
+  }
+  onDateChange(e) {
+    // User picked a date from calendar
+    console.log(e.value); 
   }
 
   setCurrency() {

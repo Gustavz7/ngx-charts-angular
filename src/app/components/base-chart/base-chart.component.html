@@ -1,4 +1,7 @@
-<p style="color: black;"> Valor del {{selectedValue}} en los ultimos {{dates.length}} registros</p>
+<p class="chart-title">
+  Valor <Strong>{{ selectedValue }}</Strong> en los ultimos
+  <strong>{{ dates.length }}</strong> registros
+</p>
 <div class="chart-container">
   <canvas
     baseChart
@@ -6,8 +9,7 @@
     [options]="lineChartOptions"
     [type]="lineChartType"
   ></canvas>
-  
 </div>
 <p>
-  {{errorMessage}}
+  {{ errorMessage }}
 </p>
